@@ -1,0 +1,62 @@
+<app-header
+  [song]="header[selectedIndex].song"
+  [quote]="header[selectedIndex].quote"
+  [index]="0"
+  [select]="onSelectName.bind(this)"
+/>
+
+<main>
+  <ul id="names">
+    <li>
+      <app-names
+        [user]="musicGroups[0]"
+        [index]="0"
+        [select]="onSelectName.bind(this)"
+        (taskSelected)="onSelectName(0)"
+      />
+    </li>
+    <li>
+      <app-names
+        [user]="musicGroups[1]"
+        [index]="1"
+        [select]="onSelectName.bind(this)"
+        (taskSelected)="onSelectGroup($event)"
+      />
+    </li>
+    <li>
+      <app-names
+        [user]="musicGroups[2]"
+        [index]="2"
+        [select]="onSelectName.bind(this)"
+        (taskSelected)="onSelectGroup($event)"
+      />
+    </li>
+    <li>
+      <app-names
+        [user]="musicGroups[3]"
+        [index]="3"
+        [select]="onSelectName.bind(this)"
+        (taskSelected)="onSelectGroup($event)"
+      />
+    </li>
+
+    <li>
+      <app-names
+        [user]="musicGroups[4]"
+        [index]="4"
+        [select]="onSelectName.bind(this)"
+        (taskSelected)="onSelectGroup($event)"
+      />
+    </li>
+    <li>
+      <app-names
+        [user]="musicGroups[5]"
+        [index]="5"
+        [select]="onSelectName.bind(this)"
+        (taskSelected)="onSelectGroup($event)"
+      />
+    </li>
+  </ul>
+  <app-tasks [name]="selectUser ? selectUser.name : ''" />
+</main>
+<router-outlet />
