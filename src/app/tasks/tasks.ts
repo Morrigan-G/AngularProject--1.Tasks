@@ -1,8 +1,9 @@
 import { Component,Input } from '@angular/core';
+import { TaskWindow } from './task.window/task.window';
 
 @Component({
   selector: 'app-tasks',
-  imports: [],
+  imports: [TaskWindow],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css'
 })

@@ -1,7 +1,11 @@
 import { Component,Input, input,computed, Output, EventEmitter,output } from '@angular/core';
 // import { MUSIC_NAMES } from '../music.names';
 
-
+interface User {
+  id:string;
+  avatar: string;
+  name:string;
+}
 
 // const randomIndex = Math.floor(Math.random()*HEADER_QUOTES.length)
 
@@ -12,13 +16,9 @@ import { Component,Input, input,computed, Output, EventEmitter,output } from '@a
   styleUrl: './names.css'
 })
 export class  Names {
-@Input({required:true}) user!: {
-  id:string;
-  avatar: string;
-  name:string;
-}
-@Input({required:true}) index!:number
-@Input({required:true}) select!: (index:number) => void
+@Input({required:true}) user!: User;
+// @Input({required:true}) index!:number
+// @Input({required:true}) select!: (index:number) => void
 @Output() taskSelected= new EventEmitter<string>()
 // taskSelected=output<string>()
 
@@ -40,7 +40,7 @@ get imagePath(){
 
 onClick(){
   // if(this.select){
-    this.select(this.index)
+    // this.select(this.index)
   this.taskSelected.emit(this.user.id)
   // this.select()(this.index())
 }
