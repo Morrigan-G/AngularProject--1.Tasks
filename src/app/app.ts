@@ -41,6 +41,7 @@ selectedGroupQuote?:HeaderQuote =HEADER_QUOTES.find((q) => q.groupId===this.sele
     this.selectedGroupQuote=HEADER_QUOTES.find((q) => q.groupId===id)
     this.selectedMusicGroup=MUSIC_NAMES.find((t) => t.id===id)
    }
+
   //  onClickQuotes(id:string){
   //   this.selectedGroupId = id
   //   console.log("123412")

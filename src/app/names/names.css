@@ -1,9 +1,3 @@
-div {
-  border-radius: 6px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
 button {
   display: flex;
   align-items: center;
@@ -24,8 +18,8 @@ button {
 button:hover,
 button:active,
 .active {
-  background: linear-gradient(to bottom, #3b0404, #441570);
-  color: #fa5b46;
+  background: linear-gradient(to bottom, #c17171cb, #501a84);
+  color: #f9f9f9;
   -webkit-text-stroke: 0.5px #160000; /* цвет и толщина обводки */
 }
 

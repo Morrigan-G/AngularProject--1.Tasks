@@ -10,13 +10,20 @@
     @for(groupName of musicGroups;track groupName.id){
 
     <li>
-      <app-names [user]="groupName" (taskSelected)="onSelectGroup($event)" />
+      <app-names
+        [user]="groupName"
+        [selected]="groupName.id === selectedGroupId"
+        (taskSelected)="onSelectGroup($event)"
+      />
     </li>
     }
   </ul>
 
   @if(selectedMusicGroup){
-  <app-tasks [name]="selectedMusicGroup.name" />
+  <app-tasks
+    [userId]="selectedMusicGroup.id"
+    [name]="selectedMusicGroup.name"
+  />
   } @else {
   <p id="fallback">Select group to see content</p>
   }

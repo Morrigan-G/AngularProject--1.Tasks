@@ -1,14 +1,23 @@
+@if(isAddingComment){
+<app-add-comment
+  (cancel)="onCancelComment()"
+  (add)="onAddCommentDate($event)"
+/>
+}
+
 <section>
   <header id="tasks">
     <h2>{{ name }}</h2>
     <menu>
-      <button>Add comment</button>
+      <button (click)="onAddComment()">Add comment</button>
     </menu>
   </header>
 
   <ul>
+    @for (task of selectedUserTasks; track task.id){
     <li>
-      <app-task />
+      <app-task [task]="task" (complete)="onCompleteWindow($event)" />
     </li>
+    }
   </ul>
 </section>

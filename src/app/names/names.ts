@@ -1,22 +1,20 @@
 import { Component,Input, input,computed, Output, EventEmitter,output } from '@angular/core';
 // import { MUSIC_NAMES } from '../music.names';
+import{ type User} from './names.model';
+import { Card } from "../ui/card/card";
 
-interface User {
-  id:string;
-  avatar: string;
-  name:string;
-}
 
 // const randomIndex = Math.floor(Math.random()*HEADER_QUOTES.length)
 
 @Component({
   selector: 'app-names',
-  imports: [],
+  imports: [Card],
   templateUrl: './names.html',
   styleUrl: './names.css'
 })
 export class  Names {
 @Input({required:true}) user!: User;
+@Input({required:true}) selected!: boolean
 // @Input({required:true}) index!:number
 // @Input({required:true}) select!: (index:number) => void
 @Output() taskSelected= new EventEmitter<string>()
