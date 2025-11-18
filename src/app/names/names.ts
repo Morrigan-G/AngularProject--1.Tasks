@@ -2,6 +2,7 @@ import { Component,Input, input,computed, Output, EventEmitter,output } from '@a
 // import { MUSIC_NAMES } from '../music.names';
 import{ type User} from './names.model';
 import { Card } from "../ui/card/card";
+import { HEADER_QUOTES } from '../music.names';
 
 
 // const randomIndex = Math.floor(Math.random()*HEADER_QUOTES.length)
@@ -26,15 +27,15 @@ export class  Names {
 // select =input.required<(index:number) => void>()
 
 
-// selectedName = HEADER_QUOTES[randomIndex]
+// selectedName = HEADER_QUOTES[]
 
-// imagePath=computed(()=> '/MusicGroups/' + this.selectedName().avatar() ) // способ через сигнал
+ imagePath=computed(()=> '/MusicGroups/' + this.user.avatar )// // способ через сигнал
 
 // imagePath = computed(()=>/MusicGroups/ + this.avatar()) //через инпут сигнал
 
-get imagePath(){
-  return '/MusicGroups/' + this.user.avatar
-} // способ через геттер
+// get imagePath(){
+//   return '/MusicGroups/' + this.user.avatar
+// } // способ через геттер
 
 onClick(){
   // if(this.select){

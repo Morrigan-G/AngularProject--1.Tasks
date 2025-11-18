@@ -1,8 +1,6 @@
 @if(isAddingComment){
-<app-add-comment
-  (cancel)="onCancelComment()"
-  (add)="onAddCommentDate($event)"
-/>
+<app-add-comment [userId]="userId" (close)="onCloseComment()" />
+
 }
 
 <section>
@@ -16,7 +14,7 @@
   <ul>
     @for (task of selectedUserTasks; track task.id){
     <li>
-      <app-task [task]="task" (complete)="onCompleteWindow($event)" />
+      <app-task [task]="task" />
     </li>
     }
   </ul>

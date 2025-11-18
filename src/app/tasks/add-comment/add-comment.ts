@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import type { NewAddCommentData} from '../task.window/TaskWindow.model';
+import { TasksService } from '../task.service';
 
 @Component({
   selector: 'app-add-comment',
@@ -9,22 +10,31 @@ import type { NewAddCommentData} from '../task.window/TaskWindow.model';
   styleUrl: './add-comment.css'
 })
 export class AddComment {
-  @Output() cancel = new EventEmitter<void>()
-  @Output() add= new EventEmitter<NewAddCommentData>()
-  
-  
+  @Input({required:true}) userId!:string
+  @Output() close = new EventEmitter<void>()
+  // @Output() add= new EventEmitter<NewAddCommentData>()
+
   enteredTitle= ''
   enteredSummary=''
   enteredDate=''
+private tasksService = inject(TasksService)
+ 
+
 onCancel(){
-this.cancel.emit()
+this.close.emit()
 }
 onSubmit(){
-this.add.emit({
-  title: this.enteredTitle,
-  summary:this.enteredSummary,
-  date: this.enteredDate
-})
+  this.tasksService.addCommit({
+    title: this.enteredTitle,
+    summary:this.enteredSummary,
+    date: this.enteredDate
+  }, this.userId)
+  this.close.emit()
+// this.add.emit({
+//   title: this.enteredTitle,
+//   summary:this.enteredSummary,
+//   date: this.enteredDate
+// })
 
 }
 
