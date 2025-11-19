@@ -29,7 +29,7 @@ export class  Names {
 
 // selectedName = HEADER_QUOTES[]
 
- imagePath=computed(()=> './MusicGroups/' + this.user.avatar ) // способ через сигнал
+ imagePath=computed(()=> '/public/MusicGroups/' + this.user.avatar) // способ через сигнал
 
 // imagePath = computed(()=>/MusicGroups/ + this.avatar()) //через инпут сигнал
 
