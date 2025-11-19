@@ -9,37 +9,37 @@ export const MUSIC_NAMES:SelectedMusicGroup[] = [
     
     id: 'u1',
     name: 'Spiritbox',
-    avatar: 'Spiritbox.jpg',
+    avatar: '/public/MusicGroups/Spiritbox.jpg',
   },
   {
     
     id: 'u2',
     name: 'FFDP',
-    avatar: 'FFDP.jpg',
+    avatar: '/public/MusicGroups/FFDP.jpg',
   },
   {
     
     id: 'u3',
     name: 'Istasha',
-    avatar: 'Istasha.jpg',
+    avatar: '/public/MusicGroups/Istasha.jpg',
   },
   {
     
     id: 'u4',
     name: 'Scarlxrd',
-    avatar: 'Scarlxrd.jpg',
+    avatar: '/public/MusicGroups/Scarlxrd.jpg',
   },
   {
     
     id: 'u5',
     name: 'Mugxtsu',
-    avatar: 'Mugxtsu.jpg',
+    avatar: '/public/MusicGroups/Mugxtsu.jpg',
   },
   {
     
     id: 'u6',
     name: 'In flames',
-    avatar: 'In flames.jpg',
+    avatar: '/public/MusicGroups/Inflames.jpg',
   },
 ];
 

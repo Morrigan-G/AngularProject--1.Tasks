@@ -14,7 +14,9 @@ import { HEADER_QUOTES } from '../music.names';
   styleUrl: './names.css'
 })
 export class  Names {
-@Input({required:true}) user!: User;
+// @Input({required:true}) user!: User;
+user=input.required <User>()
+
 @Input({required:true}) selected!: boolean
 // @Input({required:true}) index!:number
 // @Input({required:true}) select!: (index:number) => void
@@ -29,9 +31,9 @@ export class  Names {
 
 // selectedName = HEADER_QUOTES[]
 
- imagePath=computed(()=> '/public/MusicGroups/' + this.user.avatar) // способ через сигнал
+ imagePath=computed(()=> this.user().avatar) // способ через сигнал
 
-// imagePath = computed(()=>/MusicGroups/ + this.avatar()) //через инпут сигнал
+// imagePath = computed(()=>/MusicGroups/ + thi s.avatar()) //через инпут сигнал
 
 // get imagePath(){
 //   return '/MusicGroups/' + this.user.avatar
@@ -40,7 +42,7 @@ export class  Names {
 onClick(){
   // if(this.select){
     // this.select(this.index)
-  this.taskSelected.emit(this.user.id)
+  this.taskSelected.emit(this.user().id)
   // this.select()(this.index())
 }
   
